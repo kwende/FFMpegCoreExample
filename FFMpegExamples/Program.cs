@@ -82,7 +82,7 @@ namespace FFMpegExamples
                 .FromPipeInput(videoFramesSource)
                 .OutputToFile(OutputPath, false, options => options
                     .WithVideoCodec(VideoCodec.LibX264)
-                    .WithFramerate(30))
+                    .WithFramerate(30)) // NOTE: you can specify additional encoding parameters here. 
                 .ProcessAsynchronously().Wait();
 
             TimeSpan ts = DateTimeOffset.Now - _firstFrameProcessedAt; 
